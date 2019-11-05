@@ -6,7 +6,7 @@
  
 Instructions:
 
-MySQL setup
+MySQL db initial setup
 
 -Open Command Line for mySQL
 -Login with your password
