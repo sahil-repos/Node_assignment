@@ -1,0 +1,83 @@
+<html>
+
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>SignUP!</title>
+    
+    </head>
+
+<body  style="background-image: url('http://getwallpapers.com/wallpaper/full/3/6/f/1234738-wallpaper-music-theme-1920x1200-for-windows.jpg');
+background-size:cover;
+background-repeat:no-repeat;" >
+
+
+</body>
+    <div class="container mt-5" >
+        <div class="row">
+            <div class="col-sm-6 ">
+
+ <div class="col-sm-6" style="border-left: 1px solid black">
+                <div class="container">
+                    <h2 style=" color:rgb(226, 247, 45)">Signup</h2>
+                    {{#if signupSuccessStatus}}
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> {{signupSuccessStatus}}
+                    </div>
+                    {{/if}}
+                    {{#if signupFailureStatus}}
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> {{signupFailureStatus}}
+                    </div>
+                    {{/if}}
+                    <form action="/signup" method="post">
+                        <div class="form-group">
+                            <label for="username" style=" color:white">Name</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter your name"
+                                name="username" required>
+                        </div>
+                       
+                       
+                        <div class="form-group">
+                            <div>
+                            <label for="user_dob" style=" color:white">DOB</label>
+                            </div>
+                            <input type="date" class="form-control" id="user_dob" placeholder="Enter Date of Birth"
+                                name="user_dob" required>
+                        </div>
+                            <div class='form-group'>
+                                <label for="user_email" style="color:white">Email</label>
+                                <input type="text" class="form-control" id="user_email" placeholder="Enter uour Email" name="user_email" required>
+                            </div>
+                                     
+                        <div class="form-group">
+                            <label for="company" style=" color:white">Company</label>
+                            <input type="text" class="form-control" id="company" placeholder="Enter company name"
+                                name="company" >
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd" style=" color:white">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register!</button>
+                    </form>
+                </div>
+            </div>
+<div>
+   <label  style=" color:white"></label>
+
+</div>
+<div>
+<a href="/login" class="btn btn-secondary">Already Signed up? Log in here</a>
+</div>
+
+
+</body>
+
+</html>

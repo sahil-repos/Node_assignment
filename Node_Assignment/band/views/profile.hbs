@@ -1,0 +1,51 @@
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Band</title>
+    
+</head>
+
+<body style="background-color:lightsalmon">
+    <nav class="navbar  navbar-dark bg-dark">
+        <a href="/" style="text-decoration: none;">
+            <h3 class="" style="color: #fff">Profile</h3>
+        </a>
+        <div class="dropdown" style="width: 90px">
+            <img src="https://www.w3schools.com/howto/img_avatar.png"
+                style="width: 55%; height: 10%; border-radius: 50%; cursor: pointer;" alt="" class="ropdown-toggle"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/profile">Profile</a>
+                <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="https://www.w3schools.com/howto/img_avatar.png"
+                    style="width: 60%; padding: 20px; border-radius: 60%">
+            </div>
+            <div class="col-sm-6 p-5">
+                <div class="form-group">
+                    <br>
+                    <label for="username"><b>Name:</b></label>
+                    <input type="text" class="form-control" id="username" value="{{user.username}}" readonly>
+                    <br>
+                    <label for="user_email"><b>Email:</b></label>
+                    <input type="text" class="form-control" id="user_email" value="{{user.user_email}}" readonly>
+                    <br>
+                    <label for="user_dob"><b> DOB:</b></label>
+                    <input type="date" class="form-control" id="user_dob" value="{{user.user_dob}}" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

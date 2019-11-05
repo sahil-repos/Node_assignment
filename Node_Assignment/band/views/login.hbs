@@ -1,0 +1,110 @@
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Login!</title>
+<style>
+    .im {
+    max-width:100%;
+    height:auto;
+}
+</style>
+</head>
+
+<body  style="background-image: url('http://getwallpapers.com/wallpaper/full/3/6/f/1234738-wallpaper-music-theme-1920x1200-for-windows.jpg');
+background-size:cover;
+background-repeat:no-repeat;" >
+<div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="container login-container" style="display: {{login}}">
+                    <h2 style=" color:yellow">My Playlist</h2>
+                    {{#if loginFailureStatus}}
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> {{loginFailureStatus}}
+                    </div>
+                    {{/if}}
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="user_email" style=" color:white">Email</label>
+                            <input type="text" class="form-control" id="user_email" placeholder="Enter your email"
+                                name="user_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd" style=" color:white">Password</label>
+                            <input type="password" class="form-control"  id="password" placeholder="Enter your password"
+                                name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" style="float: right; color:white" class="forgotpassword">forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+
+                <div class="container forget-password-container" style="display: {{forgot}}">
+                    <h2 style="color:white">Forgot Password</h2>
+                    <div class="alert alert-danger" style="display: {{forgot}}">
+                        <strong>Sorry!</strong> {{message}}
+                    </div>
+                    <form action="/forgotpassword" method="post">
+                        <div class="form-group">
+                            <label for="user_email" style="color:white">Email</label>
+                            <input type="text" class="form-control" id="user_email" placeholder="Enter your email"
+                                name="user_email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <div class="container new-password-container" style="display: {{new}}">
+                    <h2>New Password</h2>
+                    <div class="alert alert-danger" style="display: {{otpmessageShow}}">
+                        <strong>Sorry!</strong> {{otpmessage}}
+                    </div>
+                    <form action="/newpassword" method="post">
+                        <div class="form-group">
+                            <label for="userotp">OTP:</label>
+                            <input type="text" class="form-control" id="userotp" placeholder="Enter otp"
+                                name="userotp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newpassword">New Password:</label>
+                            <input type="password" class="form-control" id="newpassword" placeholder="Enter new password"
+                                name="newpassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <br>
+                       <a href="/signup" class="btn btn-primary"> Sign up!</a>
+
+    </div>
+ </div>
+
+    <script>
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 4000);
+        $(".forgotpassword").click(function () {
+            $(".login-container").hide();
+            $(".new-password-container").hide();
+            $(".forget-password-container").show();
+        });
+
+    </script>
+</body>
+
+</html>
