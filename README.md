@@ -18,8 +18,9 @@ create database "dbname"
 Replace the database name from Sequilize.js and myqlConnection.js to "dbname"
 
 
-Replace the email and password to your registered Gmail and password  in bands/actions/actions.js 
- in Nodemailer implementation to send the otp
+Replace the email and password to your registered Gmail and password  in bands/actions/actions.js in Nodemailer implementation to send the otp
+ 
+install node dependencies: npm install
 
 Command to run node application : npm start 
 (see package.json for more)            //Enter your Gmail and password  here to send the otp as sender
